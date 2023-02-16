@@ -9,8 +9,10 @@ function onInput(event) {
   if (event.currentTarget.value.length === 6) {
     // console.log("ok");
     input.classList.add("valid");
+    input.classList.remove("invalid");
   } else {
     // console.log("ne ok");
+    input.classList.remove("valid");
     input.classList.add("invalid");
   }
 }

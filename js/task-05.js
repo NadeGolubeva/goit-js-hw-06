@@ -12,7 +12,7 @@ const span = document.querySelector("span#name-output");
 const input = document.querySelector("input#name-input");
 // console.log(span);
 // console.log(input);
-
+input.placeholder = "Anonymous";
 input.addEventListener("input", inputData);
 function inputData(event) {
   span.textContent = event.currentTarget.value;

@@ -21,20 +21,33 @@ const password = document.querySelector("input[type=password]");
 form.addEventListener("submit", onFormSubmit);
 function onFormSubmit(event) {
   event.preventDefault();
-  console.log(form);
+  // console.log(form);
 
-  const formData = new FormData(event.currentTarget);
-  formData.forEach((value, name) => {
-    if (value === "") {
-      alert("Все поля должны быть заполнены!!!");
-    } else {
-      let data = [];
-      //   console.log(elements);
-      console.log("onFormSubmit -> name", name);
-      console.log("onFormSubmit -> value", value);
-      data.push(name, value);
-      console.log(data);
-    }
-    form.reset();
-  });
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
+  if (email.value === "") {
+    alert("Все поля должны быть заполнены!!!");
+  } else if (password.value === "") {
+    alert("Все поля должны быть заполнены!!!");
+  } else {
+    console.log(email.value, password.value);
+  }
+  form.reset();
+  console.log(email, password);
 }
+// const formData = new FormData(event.currentTarget);
+// formData.forEach((value, name) => {
+//   if (value === "") {
+//     alert("Все поля должны быть заполнены!!!");
+//   } else {
+//     let data = [];
+//     //   console.log(elements);
+//     console.log("onFormSubmit -> name", name);
+//     console.log("onFormSubmit -> value", value);
+//     data.push(name, value);
+//     console.log(data);
+//   }
+//   form.reset();
+// });
+// }
